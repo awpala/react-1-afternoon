@@ -15,15 +15,13 @@ export default class Palindrome extends Component {
   }
 
   isPalindrome(userInput) {
-    let word = userInput;
-
     // N.B. Recursive algorithm via https://www.khanacademy.org/computing/computer-science/algorithms/recursive-algorithms/a/using-recursion-to-determine-whether-a-word-is-a-palindrome
-    if(word.length === 0 || word.length === 1) {
+    if(userInput.length === 0 || userInput.length === 1) {
       this.setState({ palindrome: 'true' })
     } else {
-      (word.charAt(0) !== word.charAt(word.length - 1))
+      userInput.charAt(0) !== userInput.charAt(userInput.length - 1)
       ? this.setState({ palindrome: 'false' }) 
-      : this.isPalindrome(word.substring(1, word.length - 1)) ;
+      : this.isPalindrome(userInput.substring(1, userInput.length - 1)) ;
     }
   }
 
